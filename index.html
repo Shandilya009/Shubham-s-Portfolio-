@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- EmailJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -28,8 +31,8 @@
   </ul>
 
   <div class="nav-icons">
-    <a href="https://github.com/Shandilya009" target="_blank" class="social-icon">GitHub</a>
-    <a href="https://linkedin.com/in/shubham-shandilya-67a7112b3" target="_blank" class="social-icon">LinkedIn</a>
+    <a href="https://github.com/Shandilya009" target="_blank" rel="noopener noreferrer" class="social-icon">GitHub</a>
+    <a href="https://www.linkedin.com/in/shubham-shandilya-67a7112b3" target="_blank" rel="noopener noreferrer" class="social-icon">LinkedIn</a>
     <button id="dark-mode-toggle">🌙</button>
   </div>
 
@@ -57,6 +60,24 @@
       I enjoy building responsive and functional web applications using React, Node.js, PHP, and MySQL.
       My goal is to develop scalable solutions while continuously learning and contributing to open-source projects.
     </p>
+    
+    <div class="quick-facts">
+      <h3>Quick Facts</h3>
+      <div class="facts-list">
+        <div class="fact-item">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Expected Graduation: 2027</span>
+        </div>
+        <div class="fact-item">
+          <i class="fa-solid fa-globe"></i>
+          <span>Open to Remote & On-site opportunities</span>
+        </div>
+        <div class="fact-item">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Open to Internship & Full-time roles</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -217,16 +238,77 @@
   </div>
 </section>
 
-<!-- Professional Development Section -->
+<!-- Achievements Section -->
 <section id="achievements" class="scroll-animation">
   <div class="container">
     <h2>Achievements</h2>
-    <ul class="professional-list">
-      <li>Contributed regularly to GitHub projects, including open-source collaborations.</li>
-      <li>Participated in <strong>PENTAOMNIA (InnovateX – A 24-hour Hackathon)</strong>, collaborating with peers to build innovative tech solutions.</li>
-      <li>Enhanced problem-solving expertise through focused work on <strong>Dynamic Programming</strong> concepts.</li>
-      <li>Currently pursuing <strong>NCC ‘C’ Certificate</strong> training—developing leadership, discipline, and team coordination skills.</li>
-      <li>Committed to continuous learning through online courses and professional networking.</li>
+    <div class="achievements-grid">
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>Hackathon Participant</h3>
+          <p>Participated in <strong>PENTAOMNIA (InnovateX – A 24-hour Hackathon)</strong>, collaborating with peers to build innovative tech solutions under time constraints.</p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>Academic Excellence</h3>
+          <p>Maintained strong academic performance with <strong>8.15 CGPA</strong> throughout Computer Science and Engineering degree at Lovely Professional University.</p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>Open Source Contributor</h3>
+          <p>Contributed regularly to GitHub projects, including open-source collaborations and maintaining personal repositories with <strong>6+ projects</strong>.</p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>Problem Solving Expert</h3>
+          <p>Enhanced problem-solving expertise through focused work on <strong>Dynamic Programming</strong> concepts and algorithmic challenges.</p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>Leadership Training</h3>
+          <p>Currently pursuing <strong>NCC 'C' Certificate</strong> training—developing leadership, discipline, and team coordination skills.</p>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="achievement-content">
+          <h3>Continuous Learner</h3>
+          <p>Committed to continuous learning through online courses and professional networking, earning <strong>5+ certifications</strong> in various technologies.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
     </ul>
   </div>
 </section>
@@ -235,30 +317,174 @@
 <section id="certificates" class="scroll-animation">
   <div class="container">
     <h2>Certificates</h2>
-    <ul class="certificate-list">
-      <li><a href="https://drive.google.com/file/d/1mXxO7t3n6yZ4-RAtkNZR-kpxzvSGb9C5/view" target="_blank"><strong>Build Generative AI Apps and Solutions with No-Code Tools</strong></a> — Infosys Springboard, Aug 2025</li>
-      <li><a href="https://drive.google.com/file/d/1HbbBVssMROBBCnRw1TRCBI5GSmwx_CEV/view" target="_blank"><strong>Mastering in Fullstack</strong></a> — Programming Pathshala, July 2025</li>
-      <li><a href="https://drive.google.com/file/d/1PbtRBXyjKLMq2AwWfOAPTzz3Rn0rOkcn/view" target="_blank"><strong>Cloud Computing</strong></a> — Swayam (NPTEL), Apr 2025</li>
-      <li><a href="https://www.coursera.org/account/accomplishments/verify/0VVZ5EPF3UHB" target="_blank"><strong>Fundamentals of Network Communication</strong></a> — University of Colorado (Coursera), Sep 2024</li>
-      <li><a href="https://www.coursera.org/account/accomplishments/specialization/UIURZ79JDCWM" target="_blank"><strong>Computer Communications</strong></a> — Princeton University (Coursera), Aug 2024</li>
-    </ul>
+    <div class="certificates-grid">
+      
+      <div class="certificate-card">
+        <div class="certificate-icon">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="certificate-content">
+          <h3><a href="https://drive.google.com/file/d/1mXxO7t3n6yZ4-RAtkNZR-kpxzvSGb9C5/view" target="_blank">Build Generative AI Apps and Solutions with No-Code Tools</a></h3>
+          <div class="cert-provider">Infosys Springboard</div>
+          <div class="cert-date">August 2025</div>
+        </div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="certificate-content">
+          <h3><a href="https://drive.google.com/file/d/1HbbBVssMROBBCnRw1TRCBI5GSmwx_CEV/view" target="_blank">Mastering in Fullstack</a></h3>
+          <div class="cert-provider">Programming Pathshala</div>
+          <div class="cert-date">July 2025</div>
+        </div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">
+          <i class="fa-solid fa-cloud"></i>
+        </div>
+        <div class="certificate-content">
+          <h3><a href="https://drive.google.com/file/d/1PbtRBXyjKLMq2AwWfOAPTzz3Rn0rOkcn/view" target="_blank">Cloud Computing</a></h3>
+          <div class="cert-provider">Swayam (NPTEL)</div>
+          <div class="cert-date">April 2025</div>
+        </div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">
+          <i class="fa-solid fa-network-wired"></i>
+        </div>
+        <div class="certificate-content">
+          <h3><a href="https://www.coursera.org/account/accomplishments/verify/0VVZ5EPF3UHB" target="_blank">Fundamentals of Network Communication</a></h3>
+          <div class="cert-provider">University of Colorado (Coursera)</div>
+          <div class="cert-date">September 2024</div>
+        </div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">
+          <i class="fa-solid fa-satellite-dish"></i>
+        </div>
+        <div class="certificate-content">
+          <h3><a href="https://www.coursera.org/account/accomplishments/specialization/UIURZ79JDCWM" target="_blank">Computer Communications</a></h3>
+          <div class="cert-provider">Princeton University (Coursera)</div>
+          <div class="cert-date">August 2024</div>
+        </div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="certificate-content">
+          <h3><a href="https://drive.google.com/drive/u/0/home" target="_blank">Technical Quiz - C Programming & Database Management</a></h3>
+          <div class="cert-provider">Technical Quiz Participation</div>
+          <div class="cert-date">April 18, 2024</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="scroll-animation">
   <div class="container">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <div class="contact-info">
-      <p><strong>Phone:</strong> +91 8789368214</p>
-      <p><strong>Email:</strong> sshandilya2304@gmail.com</p>
-      <p><strong>Location:</strong> Godda, Jharkhand, India</p>
+    <!-- Header -->
+    <div class="contact-header">
+      <h2>Let's Build Something Together 🚀</h2>
+      <p class="contact-subtitle">Have a project idea, internship opportunity, or collaboration in mind? Feel free to reach out.</p>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="contact-grid">
+      <!-- Left: Contact Form -->
+      <div class="contact-form-wrapper">
+        <h3>Send Me a Message</h3>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="from_name">Your Name</label>
+            <input type="text" id="from_name" name="from_name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="from_email">Your Email</label>
+            <input type="email" id="from_email" name="from_email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+        
+        <!-- Success Message (hidden by default) -->
+        <div class="success-message" id="success-message">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>Thank you! Your message has been sent successfully.</p>
+        </div>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="contact-info-wrapper">
+        <!-- Quick Contact Card -->
+        <div class="contact-info-card">
+          <h3>Quick Contact</h3>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Email</span>
+              <a href="mailto:sshandilya2304@gmail.com">sshandilya2304@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+918789368214">+91 8789368214</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contact-details">
+              <span class="contact-label">Location</span>
+              <span>Godda, Jharkhand, India</span>
+            </div>
+          </div>
+        </div>
+        <!-- Social Links -->
+        <div class="social-links-card">
+          <h3>Connect With Me</h3>
+          <div class="social-buttons">
+            <a href="https://github.com/Shandilya009" target="_blank" rel="noopener noreferrer" class="social-btn github-btn">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/shubham-shandilya-67a7112b3" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:sshandilya2304@gmail.com" class="social-btn email-btn">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email</span>
+            </a>
+            <a href="assets/cv new.pdf" download class="social-btn resume-btn">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Resume</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

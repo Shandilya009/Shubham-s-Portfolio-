@@ -1,12 +1,32 @@
-// Dark/Light Mode Toggle
+// Dark/Light Mode Toggle with Persistence
 const darkModeBtn = document.getElementById('dark-mode-toggle');
+
+// Check for saved theme preference or default to dark
+const currentTheme = localStorage.getItem('theme') || 'dark';
+
+// Apply saved theme on page load
+if (currentTheme === 'dark') {
+  document.body.classList.add('dark');
+  darkModeBtn.textContent = '🌙';
+} else {
+  document.body.classList.remove('dark');
+  darkModeBtn.textContent = '☀️';
+}
+
+// Toggle theme on button click
 darkModeBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  darkModeBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  
+  // Update button icon
+  const isDark = document.body.classList.contains('dark');
+  darkModeBtn.textContent = isDark ? '🌙' : '☀️';
+  
+  // Save theme preference
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 
-// Smooth scrolling
-document.querySelectorAll('nav a').forEach(link => {
+// Smooth scrolling - only for internal links
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
@@ -20,11 +40,58 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Contact form
+// EmailJS Configuration
+// Initialize EmailJS with your Public Key
+(function() {
+  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+})();
+
+// Contact form with EmailJS
 document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault();
-  alert('Thank you, your message has been sent!');
-  e.target.reset();
+  
+  // Get form button and success message
+  const submitBtn = e.target.querySelector('button[type="submit"]');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const successMessage = document.getElementById('success-message');
+  const originalBtnText = btnText.textContent;
+  
+  // Hide success message if visible
+  successMessage.classList.remove('show');
+  
+  // Show loading state
+  btnText.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  
+  // Send email using EmailJS
+  emailjs.sendForm(
+    'YOUR_SERVICE_ID',      // Replace with your EmailJS Service ID
+    'YOUR_TEMPLATE_ID',     // Replace with your EmailJS Template ID
+    e.target
+  )
+  .then(() => {
+    // Success
+    btnText.textContent = originalBtnText;
+    submitBtn.disabled = false;
+    
+    // Show success message
+    successMessage.classList.add('show');
+    
+    // Clear the form
+    e.target.reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      successMessage.classList.remove('show');
+    }, 5000);
+  })
+  .catch((error) => {
+    // Error
+    console.error('EmailJS Error:', error);
+    alert('Failed to send message. Please try again or contact me directly at sshandilya2304@gmail.com');
+    btnText.textContent = originalBtnText;
+    submitBtn.disabled = false;
+  });
 });
 
 // Scroll animations and section highlight

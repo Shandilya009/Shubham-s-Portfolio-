@@ -113,18 +113,150 @@ section:nth-child(even) {
   margin: auto;
 }
 
-/* Skills */
-.skills-list {
+/* Enhanced About Section */
+#about {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
-.skills-list li {
-  background: #00bfff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="aboutPattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23aboutPattern)"/></svg>');
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#about .container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+#about h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #fff, #f0f8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.about-text:hover::before {
+  left: 100%;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.2));
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ffbf;
+  display: block;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.highlight-text {
+  color: #00ffbf;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  #about h2 {
+    font-size: 2.5rem;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
 }
 
 /* Projects */
@@ -393,31 +525,141 @@ body.dark .certificate-list li {
 .project-card:hover .project-img {
   transform: scale(1.05);
 }
+/* Enhanced Skills Section */
+#skills {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+#skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#skills .container {
+  position: relative;
+  z-index: 1;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, #fff, #f0f8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
 /* Skill Icons Styling */
+.with-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .with-icons li {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 1rem;
-  background: #00bfff;
+  gap: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
   color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.with-icons li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.with-icons li:hover::before {
+  left: 100%;
 }
 
 .with-icons li i {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
 }
 
 .with-icons li:hover {
-  transform: translateY(-5px);
-  background: #009acd;
+  transform: translateY(-8px) scale(1.05);
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.2));
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  border-color: rgba(255,255,255,0.4);
 }
 
+.with-icons li:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Soft Skills Special Styling */
+.soft-skills-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(255,255,255,0.2);
+}
+
+.soft-skills-section .with-icons li {
+  background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,165,0,0.1));
+  border-color: rgba(255,215,0,0.3);
+}
+
+.soft-skills-section .with-icons li:hover {
+  background: linear-gradient(135deg, rgba(255,215,0,0.3), rgba(255,165,0,0.2));
+  border-color: rgba(255,215,0,0.5);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  .with-icons {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
   .with-icons li {
-    flex: 1 1 45%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .with-icons li i {
+    font-size: 1.5rem;
+  }
+  
+  #skills h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .with-icons {
+    grid-template-columns: 1fr 1fr;
   }
 }
 h2.section-title {

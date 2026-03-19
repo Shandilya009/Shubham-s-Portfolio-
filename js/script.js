@@ -43,7 +43,7 @@ menuToggle.addEventListener('click', () => {
 // EmailJS Configuration
 // Initialize EmailJS with your Public Key
 (function() {
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+  // emailjs.init("YOUR_PUBLIC_KEY"); // Uncomment and add your key when ready
 })();
 
 // Contact form with EmailJS
@@ -56,12 +56,40 @@ document.getElementById('contact-form').addEventListener('submit', e => {
   const successMessage = document.getElementById('success-message');
   const originalBtnText = btnText.textContent;
   
+  // Get form values
+  const name = document.getElementById('from_name').value;
+  const email = document.getElementById('from_email').value;
+  const message = document.getElementById('message').value;
+  
   // Hide success message if visible
   successMessage.classList.remove('show');
   
   // Show loading state
   btnText.textContent = 'Sending...';
   submitBtn.disabled = true;
+  
+  // Simulate sending (remove this when EmailJS is configured)
+  setTimeout(() => {
+    // Success
+    btnText.textContent = originalBtnText;
+    submitBtn.disabled = false;
+    
+    // Show success message
+    successMessage.classList.add('show');
+    
+    // Clear the form
+    e.target.reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      successMessage.classList.remove('show');
+    }, 5000);
+    
+    // Log to console (for testing)
+    console.log('Form submitted:', { name, email, message });
+  }, 1000);
+  
+  /* Uncomment this section when you have EmailJS configured:
   
   // Send email using EmailJS
   emailjs.sendForm(
@@ -92,6 +120,8 @@ document.getElementById('contact-form').addEventListener('submit', e => {
     btnText.textContent = originalBtnText;
     submitBtn.disabled = false;
   });
+  
+  */
 });
 
 // Scroll animations and section highlight
@@ -134,3 +164,47 @@ const handleScrollAnimations = () => {
 };
 
 window.addEventListener('scroll', handleScrollAnimations);
+
+
+// Typing Animation
+const typingText = document.querySelector('.typing-text');
+const words = ['Java Developer', 'React Developer', 'Problem Solver', 'Full-Stack Developer', 'NCC Cadet'];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 150;
+
+function type() {
+  const currentWord = words[wordIndex];
+  
+  if (isDeleting) {
+    // Remove characters
+    typingText.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+    typingSpeed = 50;
+  } else {
+    // Add characters
+    typingText.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+    typingSpeed = 150;
+  }
+  
+  // Check if word is complete
+  if (!isDeleting && charIndex === currentWord.length) {
+    // Pause at end of word
+    typingSpeed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    // Move to next word
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    typingSpeed = 500;
+  }
+  
+  setTimeout(type, typingSpeed);
+}
+
+// Start typing animation when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(type, 1000);
+});
